@@ -9,8 +9,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static io.github.bonigarcia.seljup.BrowserType.ANDROID;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestA {
     private static final String KEY = System.getenv("TESTINGBOT_KEY");
@@ -32,7 +31,6 @@ public class TestA {
     public void testAndroid(
             @DockerBrowser(type = ANDROID, version = "8.1", deviceName = "Nexus S") RemoteWebDriver driver) {
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
-        assertThat(driver.getTitle(),
-                containsString("JUnit 5 extension for Selenium"));
+        assertTrue(driver.getTitle().contains("JUnit 5 extension for Selenium"));
     }
 }

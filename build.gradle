@@ -38,10 +38,10 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
     testRuntimeOnly "org.junit.platform:junit-platform-launcher:${junitPlatformVersion}"
     testRuntimeOnly "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
     testImplementation "io.github.bonigarcia:webdrivermanager:${webdrivermanagerVersion}"
     testImplementation "io.github.bonigarcia:selenium-jupiter:${seleniumJupiterVersion}"
     implementation "org.slf4j:slf4j-api:${slf4jVersion}"
